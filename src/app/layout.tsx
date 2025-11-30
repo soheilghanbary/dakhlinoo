@@ -2,9 +2,9 @@ import '@/styles/app.css'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
 import { font } from '@/shared/assets/font'
+import { SplashScreen } from '@/shared/components/common/splash-screen'
 import Providers from '@/shared/components/providers'
 import { siteConfig } from '@/shared/config/site'
-import { SplashScreen } from '@/shared/components/common/splash-screen'
 
 export const metadata: Metadata = {
   title: {
