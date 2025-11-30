@@ -4,6 +4,7 @@ import type { PropsWithChildren } from 'react'
 import { font } from '@/shared/assets/font'
 import Providers from '@/shared/components/providers'
 import { siteConfig } from '@/shared/config/site'
+import { SplashScreen } from '@/shared/components/common/splash-screen'
 
 export const metadata: Metadata = {
   title: {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
       <body className={`${font.className} antialiased`}>
+        <SplashScreen />
         <Providers>{children}</Providers>
       </body>
     </html>

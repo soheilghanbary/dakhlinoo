@@ -126,7 +126,7 @@ const DeleteNoteButton = ({ id }: { id: string }) => {
       onClick={onDelete}
       disabled={isPending}
       variant={'secondary'}
-      className="mx-auto mt-4 bg-destructive/10 text-destructive dark:bg-destructive/25"
+      className="mt-4 ml-auto bg-destructive/10 text-destructive dark:bg-destructive/25"
     >
       {isPending ? <Spinner /> : <TrashIcon />}
       حذف یادداشت

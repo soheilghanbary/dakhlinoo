@@ -1,7 +1,7 @@
+'use client'
 import { format } from 'date-fns-jalali'
 import Image from 'next/image'
 import { Fragment } from 'react'
-import { Logo } from '@/shared/assets/icons'
 import { AppHeader } from '@/shared/components/layouts/app-header'
 import { Separator } from '@/shared/components/ui/separator'
 import { siteConfig } from '@/shared/config/site'
@@ -23,12 +23,21 @@ export default function About() {
     <Fragment>
       <AppHeader title="درباره ما" />
       <Separator className="my-4" />
-      <Logo className="mx-auto size-24 text-primary" />
-      <div className="space-y-2 text-xs/6">
+      <Image
+        width={120}
+        height={120}
+        sizes="100vw"
+        quality={100}
+        alt="دخل"
+        src="/kharjino.webp"
+        draggable="false"
+        className="mx-auto"
+      />
+      <div className="mt-4 space-y-2 text-xs/6">
         <p className="text-center">
-          خرجینو یه اپلیکیشن برای مدیریت مخارج های شما میباشد که با استفاده از
-          جدید ترین تکنولوژی های وب ساخته شده و کاملا متن باز یا (Open Source)
-          میباشد.
+          دخل یک وب اپلیکیشن مدرن و مینیمال برای مدیریت مخارج شخصی که به صورت
+          کاملا رایگان و اوپن سورس توسعه داده شده. همچنین از جدیدترین تکنولوژی
+          های روز وب استفاده شده.
         </p>
         <div className="space-y-2 text-center font-medium">
           <p>
