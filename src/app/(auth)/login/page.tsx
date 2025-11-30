@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { Logo } from '@/shared/assets/icons'
 import { Separator } from '@/shared/components/ui/separator'
+import { siteConfig } from '@/shared/config/site'
 import { getUserId } from '@/shared/lib/helpers'
 import OAuthButton from '../components/oauth-button'
 
@@ -10,7 +11,9 @@ export default async function Page() {
   return (
     <section className="container-sm min-h-svh bg-background p-4">
       <Logo className="mx-auto mt-20 size-24 text-primary" />
-      <h1 className="text-center font-bold text-3xl text-primary">دخلینو</h1>
+      <h1 className="text-center font-bold text-3xl text-primary">
+        {siteConfig.title}
+      </h1>
       <h3 className="my-4 text-center font-medium">ورود به حساب کاربری</h3>
       <div className="grid gap-4">
         <div className="flex items-center gap-3">

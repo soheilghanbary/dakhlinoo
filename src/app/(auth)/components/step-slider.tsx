@@ -54,8 +54,17 @@ export default function StepSlider() {
         activeIndex={activeIndex}
         onClick={(idx) => swiperRef.current?.slideTo(idx)}
       />
+      {activeIndex < wizardData.length - 1 && (
+        <Button
+          variant={'secondary'}
+          onClick={() => swiperRef.current?.slideNext()}
+          className="animate-duration-400 animate-fade px-20"
+        >
+          ادامه
+        </Button>
+      )}
       {activeIndex === wizardData.length - 1 && (
-        <Button asChild className="w-full animate-duration-400 animate-fade-up">
+        <Button asChild className="w-full animate-duration-400 animate-fade">
           <Link href={'/login'}>ورود به حساب کاربری</Link>
         </Button>
       )}

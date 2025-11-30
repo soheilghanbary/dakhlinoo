@@ -17,6 +17,7 @@ export function LogoutButton() {
 
   return (
     <Button
+      disabled={loading}
       onClick={onSignOut}
       variant={'secondary'}
       className="my-4 bg-destructive/10 text-destructive shadow-none"
