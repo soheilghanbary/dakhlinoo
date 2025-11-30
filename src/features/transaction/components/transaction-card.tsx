@@ -2,6 +2,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { format } from 'date-fns-jalali'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import type { Category, Transaction, TransactionType } from '@/server/db/schema'
@@ -43,12 +44,14 @@ export const TransactionCard = ({
 }: TransactionCardProps) => {
   const qc = useQueryClient()
   const [open, setOpen] = useState(false)
+  const router = useRouter()
   const { mutate, isPending } = useMutation(
     client.transaction.delete.mutationOptions({
       onSuccess() {
         qc.invalidateQueries(client.transaction.summary.queryOptions())
         qc.invalidateQueries(client.transaction.recent.queryOptions())
         qc.invalidateQueries(client.transaction.byCategory.queryOptions())
+        router.push('/home')
         toast.info('تراکنش حذف شد')
         setOpen(false)
       },
@@ -106,7 +109,11 @@ export const TransactionCard = ({
           <Button variant={'secondary'} asChild>
             <Link href={`/transactions/${id}`}>ویرایش</Link>
           </Button>
-          <Button onClick={() => mutate(id)} variant={'destructive'}>
+          <Button
+            onClick={() => mutate(id)}
+            variant={'destructive'}
+            disabled={isPending}
+          >
             {isPending && <Spinner />}
             حذف تراکنش
           </Button>
