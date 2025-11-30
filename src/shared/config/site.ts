@@ -5,7 +5,7 @@ import rocketAnimation from '@/shared/assets/lotties/rocket.json'
 import walletAnimation from '@/shared/assets/lotties/wallet.json'
 
 export const siteConfig = {
-  title: 'Kharjino',
+  title: 'دخلینو',
   description: 'Modern web, simplified for Web Developers',
   v: '2.5',
 }

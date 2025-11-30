@@ -29,13 +29,13 @@ export default function About() {
         sizes="100vw"
         quality={100}
         alt="دخل"
-        src="/kharjino.webp"
+        src="/logo.webp"
         draggable="false"
         className="mx-auto"
       />
       <div className="mt-4 space-y-2 text-xs/6">
         <p className="text-center">
-          دخل یک وب اپلیکیشن مدرن و مینیمال برای مدیریت مخارج شخصی که به صورت
+          دخلینو یک وب اپلیکیشن مدرن و مینیمال برای مدیریت مخارج شخصی که به صورت
           کاملا رایگان و اوپن سورس توسعه داده شده. همچنین از جدیدترین تکنولوژی
           های روز وب استفاده شده.
         </p>

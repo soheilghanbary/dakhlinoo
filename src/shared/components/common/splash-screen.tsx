@@ -30,15 +30,15 @@ export function SplashScreen() {
             height={180}
             sizes="100vw"
             quality={100}
-            alt="Kharjino"
-            src="/kharjino.webp"
+            alt="logo"
+            src="/logo.webp"
             loading="eager"
             draggable="false"
             priority
           />
         </motion.figure>
         <h1 className="mt-4 mb-2 animate-duration-500 animate-fade-up font-black text-3xl delay-300">
-          خرجینو
+          دخلینو
         </h1>
         <p className="my-1 animate-duration-500 animate-fade-up text-sm delay-500">
           اپلیکیشن مدیریت مخارج شخصی
