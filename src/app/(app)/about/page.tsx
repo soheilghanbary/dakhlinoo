@@ -29,7 +29,7 @@ export default function About() {
         sizes="100vw"
         quality={100}
         alt="دخل"
-        src="/logo.webp"
+        src="/min-logo.webp"
         draggable="false"
         className="mx-auto"
       />
