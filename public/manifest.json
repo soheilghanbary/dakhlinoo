@@ -1,6 +1,6 @@
 {
-  "name": "خرجینو",
-  "short_name": "خرجینو",
+  "name": "دخلینو",
+  "short_name": "دخلینو",
   "description": "Modern web, simplified for Web Developers",
   "start_url": "/",
   "display": "standalone",
