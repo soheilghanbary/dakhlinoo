@@ -66,7 +66,7 @@ const ChartView = ({ type = 'expense' }: { type?: TransactionType }) => {
           <Link
             key={cd.icon}
             href={`/category/${cd.id}`}
-            className="-mx-4 flex items-center p-1"
+            className="-mx-4 flex items-center border-b p-1 pb-2 last:border-0 last:pb-0"
           >
             <p className="flex grow items-center gap-2 text-sm">
               <span className="grid place-items-center rounded-full bg-primary/10 p-2">
