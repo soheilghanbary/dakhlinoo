@@ -10,7 +10,6 @@ import { client } from '@/server/lib/orpc.client'
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/shared/components/ui/card'
@@ -111,7 +110,6 @@ export function TransactionChart() {
       <Card className="mt-2 mb-4 shadow-none">
         <CardHeader>
           <CardTitle>گزارش دسته‌بندی‌ها</CardTitle>
-          <CardDescription>خلاصه خرج‌ها بر اساس دسته‌بندی</CardDescription>
         </CardHeader>
         <CardContent>
           <Suspense
