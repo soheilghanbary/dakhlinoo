@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import { redirect } from 'next/navigation'
-import { Separator } from '@/shared/components/ui/separator'
-import { siteConfig } from '@/shared/config/site'
+import walletAnimation from '@/shared/assets/lotties/wallet.json'
+import { Lottie } from '@/shared/components/ui/lottie'
 import { getUserId } from '@/shared/lib/helpers'
 import OAuthButton from '../components/oauth-button'
 
@@ -9,31 +8,15 @@ export default async function Page() {
   const userId = await getUserId()
   if (userId) return redirect('/home')
   return (
-    <section className="container-sm min-h-svh bg-background p-4">
-      <div className="animate-duration-500 animate-fade">
-        <Image
-          width={120}
-          height={120}
-          sizes="100vw"
-          quality={100}
-          alt="دخل"
-          src="/min-logo.webp"
-          draggable="false"
-          className="mx-auto mt-36"
-        />
-        <h1 className="text-center font-bold text-3xl text-primary">
-          {siteConfig.title}
-        </h1>
-        <h3 className="my-4 text-center font-medium">ورود به حساب کاربری</h3>
-        <div className="grid gap-4">
-          <div className="flex items-center gap-3">
-            <Separator className="flex-1" />
-            <span className="text-muted-foreground text-xs">ورود با</span>
-            <Separator className="flex-1" />
-          </div>
-          <OAuthButton />
-        </div>
+    <div className="container-sm min-h-svh bg-background p-4 pt-32">
+      <Lottie height={300} animationData={walletAnimation} loop={false} />
+      <div className="-mt-8 flex flex-col gap-2 text-center">
+        <h1 className="font-black text-2xl">دخلینو</h1>
+        <p className="mb-4 text-muted-foreground text-sm/6">
+          وب اپلیکیشن مدیریت مخارج شخصی
+        </p>
+        <OAuthButton />
       </div>
-    </section>
+    </div>
   )
 }
