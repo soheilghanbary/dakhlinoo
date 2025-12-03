@@ -152,9 +152,12 @@ export const transactionRouter = {
     .handler(async ({ input }) => {
       const userId = await getUserId()
       const type = input ?? 'expense'
+
       const result = await db
         .select({
+          categoryId: categories.id,
           categoryName: sql<string>`COALESCE(${categories.name}, 'نامشخص')`,
+          icon: sql<string>`COALESCE(${categories.icon}, '')`,
           total: sum(transactions.amount),
         })
         .from(transactions)
@@ -162,11 +165,13 @@ export const transactionRouter = {
         .where(
           and(eq(transactions.userId, userId), eq(transactions.type, type))
         )
-        .groupBy(categories.name)
-      // Cast + ensure numeric totals
-      return result.map((r) => ({
-        category: r.categoryName,
-        total: Number(r.total) || 0,
+        .groupBy(categories.id, categories.name, categories.icon)
+
+      return result.map((row) => ({
+        id: row.categoryId,
+        category: row.categoryName,
+        icon: row.icon || '', // Return empty string if null
+        total: Number(row.total) || 0,
       }))
     }),
   getByCategory: os

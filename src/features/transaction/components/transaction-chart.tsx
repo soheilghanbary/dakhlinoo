@@ -1,9 +1,9 @@
 'use client'
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { LoaderIcon, TrendingDown, TrendingUp } from 'lucide-react'
+import { ChevronLeft, LoaderIcon, TrendingDown, TrendingUp } from 'lucide-react'
 import { Suspense, useState } from 'react'
 import { Fragment } from 'react/jsx-runtime'
-import { Bar, BarChart, CartesianGrid, Cell, XAxis } from 'recharts'
+import { Cell, Pie, PieChart } from 'recharts'
 import type { TransactionType } from '@/server/db/schema'
 import { client } from '@/server/lib/orpc.client'
 import {
@@ -19,6 +19,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/shared/components/ui/chart'
+import { Separator } from '@/shared/components/ui/separator'
 import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs'
 
 const chartColors = [
@@ -38,26 +39,45 @@ const ChartView = ({ type = 'expense' }: { type?: TransactionType }) => {
     client.transaction.byCategory.queryOptions({ input: type })
   )
   return (
-    <ChartContainer config={chartConfig}>
-      <BarChart data={chartData}>
-        <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="category"
-          tickLine={false}
-          tickMargin={10}
-          axisLine={false}
-        />
-        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-        <Bar dataKey="total" radius={8}>
-          {chartData?.map((_entry, index) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={chartColors[index % chartColors.length]}
-            />
-          ))}
-        </Bar>
-      </BarChart>
-    </ChartContainer>
+    <>
+      <ChartContainer config={chartConfig}>
+        <PieChart>
+          <Pie
+            data={chartData}
+            dataKey="total"
+            nameKey="category"
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            innerRadius={60}
+          >
+            {chartData.map((_entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={chartColors[index % chartColors.length]}
+              />
+            ))}
+          </Pie>
+          <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        </PieChart>
+      </ChartContainer>
+      <div className="mt-4 space-y-2">
+        {chartData.map((cd) => (
+          <div key={cd.icon} className="-mx-4 flex items-center p-1">
+            <p className="flex grow items-center gap-2 text-sm">
+              <span className="grid place-items-center rounded-full bg-primary/10 p-2">
+                {cd.icon}
+              </span>
+              <span>{cd.category}</span>
+            </p>
+            <p className="flex items-center gap-0.5 text-sm">
+              {cd.total.toLocaleString('fa-IR')} تومان
+              <ChevronLeft className="size-5 text-muted-foreground" />
+            </p>
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 
@@ -69,18 +89,15 @@ export function TransactionChart() {
         defaultValue={tType}
         onValueChange={(e) => setTType(e as TransactionType)}
       >
-        <TabsList className="mt-4 grid w-full grid-cols-2 border-0 bg-transparent">
-          <TabsTrigger
-            value="expense"
-            className="rounded-sm text-sm data-[state=active]:border-destructive data-[state=active]:bg-destructive/10 data-[state=active]:text-destructive dark:data-[state=active]:text-destructive"
-          >
+        <TabsList className="mt-4 flex w-full items-center justify-center border-0 bg-transparent">
+          <TabsTrigger value="expense" className="h-10 flex-0 px-8">
             <TrendingDown />
             هزینه ها
           </TabsTrigger>
-          <TabsTrigger
-            value="income"
-            className="rounded-sm text-sm data-[state=active]:border-success data-[state=active]:bg-success/10 data-[state=active]:text-success dark:data-[state=active]:text-success"
-          >
+          <div className="mx-2 h-7">
+            <Separator orientation="vertical" />
+          </div>
+          <TabsTrigger value="income" className="h-10 flex-0 px-8">
             <TrendingUp />
             درآمد ها
           </TabsTrigger>

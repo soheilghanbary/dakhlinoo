@@ -1,8 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { DotsIcon } from '@/shared/assets/icons'
+import { DotsIcon, Logo } from '@/shared/assets/icons'
 
 export function SplashScreen() {
   const [show, setShow] = useState(true)
@@ -25,17 +24,9 @@ export function SplashScreen() {
             delay: 0.1,
           }}
         >
-          <Image
-            width={180}
-            height={180}
-            sizes="100vw"
-            quality={100}
-            alt="logo"
-            src="/min-logo.webp"
-            loading="eager"
-            draggable="false"
-            priority
-          />
+          <div className="mx-auto size-fit rounded-full bg-primary/20 p-3 ring-2 ring-primary/50 ring-offset-2 ring-offset-background">
+            <Logo className="mx-auto size-16 text-primary" />
+          </div>
         </motion.figure>
         <h1 className="mt-4 mb-2 animate-duration-500 animate-fade-up font-black text-3xl delay-300">
           دخلینو

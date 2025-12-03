@@ -31,19 +31,10 @@ export default function Page() {
         </Suspense>
       </header>
       <section className="mt-28">
-        <div className="mb-3 flex items-center justify-between">
-          <p className="font-medium text-sm">تراکنش های اخیر</p>
-          <Link
-            href={'/transactions'}
-            className="p-1 text-muted-foreground text-tiny hover:text-primary sm:text-xs"
-          >
-            مشاهده همه
-          </Link>
-        </div>
+        <TransactionChart />
         <Suspense fallback={<TransactionLoading />}>
           <RecentTransactionList />
         </Suspense>
-        <TransactionChart />
       </section>
     </Fragment>
   )
