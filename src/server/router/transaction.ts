@@ -166,6 +166,7 @@ export const transactionRouter = {
           and(eq(transactions.userId, userId), eq(transactions.type, type))
         )
         .groupBy(categories.id, categories.name, categories.icon)
+        .orderBy(desc(sum(transactions.amount)))
 
       return result.map((row) => ({
         id: row.categoryId,
