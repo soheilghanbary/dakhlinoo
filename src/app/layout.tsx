@@ -31,6 +31,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           name="format-detection"
           content="telephone=no, date=no, email=no, address=no"
         />
+        <meta property="og:image:alt" content="دخلینو" />
       </head>
       <body className={`${font.className} antialiased`}>
         <SplashScreen />

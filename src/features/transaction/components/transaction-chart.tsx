@@ -50,7 +50,7 @@ const ChartView = ({ type = 'expense' }: { type?: TransactionType }) => {
             cx="50%"
             cy="50%"
             outerRadius={80}
-            innerRadius={60}
+            innerRadius={50}
           >
             {chartData.map((_entry, index) => (
               <Cell
