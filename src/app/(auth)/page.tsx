@@ -9,7 +9,9 @@ export default async function WizardPgae() {
   if (userId) return redirect('/home')
   return (
     <div className="container-sm min-h-svh bg-background p-4 pt-32">
-      <Lottie height={300} animationData={walletAnimation} loop={false} />
+      <div className="mx-auto size-60">
+        <Lottie animationData={walletAnimation} loop={false} />
+      </div>
       <div className="-mt-8 flex flex-col gap-2 text-center">
         <h1 className="font-black text-2xl">دخلینو</h1>
         <p className="mb-4 text-muted-foreground text-sm/6">
