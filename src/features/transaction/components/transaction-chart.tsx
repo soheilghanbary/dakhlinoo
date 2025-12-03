@@ -1,6 +1,7 @@
 'use client'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { ChevronLeft, LoaderIcon, TrendingDown, TrendingUp } from 'lucide-react'
+import Link from 'next/link'
 import { Suspense, useState } from 'react'
 import { Fragment } from 'react/jsx-runtime'
 import { Cell, Pie, PieChart } from 'recharts'
@@ -63,7 +64,11 @@ const ChartView = ({ type = 'expense' }: { type?: TransactionType }) => {
       </ChartContainer>
       <div className="mt-4 space-y-2">
         {chartData.map((cd) => (
-          <div key={cd.icon} className="-mx-4 flex items-center p-1">
+          <Link
+            key={cd.icon}
+            href={`/category/${cd.id}`}
+            className="-mx-4 flex items-center p-1"
+          >
             <p className="flex grow items-center gap-2 text-sm">
               <span className="grid place-items-center rounded-full bg-primary/10 p-2">
                 {cd.icon}
@@ -74,7 +79,7 @@ const ChartView = ({ type = 'expense' }: { type?: TransactionType }) => {
               {cd.total.toLocaleString('fa-IR')} تومان
               <ChevronLeft className="size-5 text-muted-foreground" />
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </>
