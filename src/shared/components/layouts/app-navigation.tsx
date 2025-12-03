@@ -28,7 +28,7 @@ const navItems = [
   },
   {
     href: '/notes',
-    label: 'دست نویس ها',
+    label: 'دست نویس',
     icon: NotesIcon,
   },
   {
