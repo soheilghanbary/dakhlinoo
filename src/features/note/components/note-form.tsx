@@ -88,7 +88,7 @@ export const NoteForm = (props: NoteFormProps) => {
         <hr />
         <Textarea
           placeholder="توضیحات"
-          className="resize-none border-0 bg-transparent text-foreground/65 focus-visible:ring-0 dark:text-muted-foreground"
+          className="max-h-80 resize-none border-0 bg-transparent text-foreground/65 focus-visible:ring-0 dark:text-muted-foreground"
           {...register('description')}
         />
         <div className="flex items-center justify-between space-x-2 p-3">
