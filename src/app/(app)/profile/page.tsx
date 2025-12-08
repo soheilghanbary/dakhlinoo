@@ -1,16 +1,15 @@
-import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import {
-  DollarIcon,
   HeadphoneIcon,
+  InfoIcon,
   MagicIcon,
+  MoneyIcon,
   UserIcon,
-  UsersIcon,
-} from '@/shared/assets/icons/bulk'
-import { CoffeeLink, DonateLink } from '@/shared/components/common/donate-link'
+} from '@/assets/icons/outline'
 import { LogoutButton } from '@/shared/components/common/logout-button'
 import { AppHeader } from '@/shared/components/layouts/app-header'
+import { Separator } from '@/shared/components/ui/separator'
 
 const links = [
   {
@@ -21,28 +20,13 @@ const links = [
   {
     href: '/market',
     title: 'قیمت لحظه ای بازار',
-    icon: DollarIcon,
+    icon: MoneyIcon,
   },
   {
     href: '/theme',
     title: 'تغییر پوسته اپلیکیشن',
     icon: MagicIcon,
   },
-  // {
-  //   href: '/transactions',
-  //   title: 'تراکنش های من',
-  //   icon: TransactionIcon,
-  // },
-  // {
-  //   href: '/notes',
-  //   title: 'دست نویس های من',
-  //   icon: NotesIcon,
-  // },
-  // {
-  //   href: '/my-categories',
-  //   title: 'دسته بندی های من',
-  //   icon: GridIcon,
-  // },
   {
     href: '/support',
     title: 'پشتیبان آنلاین',
@@ -51,7 +35,7 @@ const links = [
   {
     href: '/about',
     title: 'درباره ما',
-    icon: UsersIcon,
+    icon: InfoIcon,
   },
 ]
 
@@ -59,22 +43,22 @@ export default function ProfilePage() {
   return (
     <Fragment>
       <AppHeader title="پروفایل" />
-      <div className="fade-up-transition flex flex-col gap-2">
-        {links.map((l, i) => (
-          <Link
-            key={i}
-            href={l.href}
-            className="flex h-12 items-center gap-3 rounded-lg bg-muted p-3 duration-150 dark:bg-card"
-          >
-            <l.icon className="size-5 text-muted-foreground/80" />
-            <span className="grow text-right text-sm/[18px]">{l.title}</span>
-            <ChevronLeft className="size-5 text-muted-foreground" />
-          </Link>
-        ))}
-        <LogoutButton />
-        <DonateLink />
-        <CoffeeLink />
-      </div>
+      <main className="space-y-2">
+        <div className="fade-up-transition -mx-4 flex flex-col gap-2 bg-card p-4">
+          {links.map((l, i) => (
+            <Link
+              key={i}
+              href={l.href}
+              className="flex h-12 items-center gap-3 rounded-lg duration-150 dark:bg-card"
+            >
+              <l.icon className="size-5" />
+              <span className="grow text-right text-sm/[18px]">{l.title}</span>
+            </Link>
+          ))}
+          <Separator className="my-1" />
+          <LogoutButton />
+        </div>
+      </main>
     </Fragment>
   )
 }

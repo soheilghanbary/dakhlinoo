@@ -11,6 +11,7 @@ export function SplashScreen() {
     }, 1500)
   }, [])
 
+  if (process.env.NODE_ENV === 'development') return null
   if (!show) return null
 
   return (

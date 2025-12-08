@@ -3,8 +3,8 @@ import { format } from 'date-fns-jalali'
 import Image from 'next/image'
 import { Fragment } from 'react'
 import { Logo } from '@/shared/assets/icons'
+import { CoffeeLink, DonateLink } from '@/shared/components/common/donate-link'
 import { AppHeader } from '@/shared/components/layouts/app-header'
-import { Separator } from '@/shared/components/ui/separator'
 import { siteConfig } from '@/shared/config/site'
 
 const Signature = () => (
@@ -23,8 +23,7 @@ export default function About() {
   return (
     <Fragment>
       <AppHeader title="درباره ما" />
-      <Separator className="my-4" />
-      <section className="fade-up-transition">
+      <section className="fade-up-transition -mx-4 mb-4 bg-card p-4">
         <div className="mx-auto size-fit rounded-full bg-primary/20 p-3 ring-2 ring-primary/50 ring-offset-2 ring-offset-background">
           <Logo className="mx-auto size-12 text-primary" />
         </div>
@@ -49,6 +48,8 @@ export default function About() {
               آخرین بروزرسانی: {format(new Date(), 'd MMMM yyyy')}
             </p>
             <Signature />
+            <DonateLink />
+            <CoffeeLink />
           </div>
         </div>
       </section>

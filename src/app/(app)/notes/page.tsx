@@ -3,11 +3,8 @@ import { NoteList, NoteListLoading } from '@/features/note'
 import { NoteDrawer } from '@/features/note/components/note-drawer'
 import { TaskFilter, TaskForm, TaskList, TaskProgress } from '@/features/task'
 import { ToggleTaskDone } from '@/features/task/components/task-filter'
-import {
-  CheckListIcon,
-  NotesIcon,
-  PlusCircleIcon,
-} from '@/shared/assets/icons/bulk'
+import { CheckListIcon, NotesIcon } from '@/shared/assets/icons/bulk'
+import { AddIcon } from '@/shared/assets/icons/outline'
 import { AppHeader } from '@/shared/components/layouts/app-header'
 import { Button } from '@/shared/components/ui/button'
 import {
@@ -49,7 +46,7 @@ export default function Page() {
             trigger={
               <div className="container-sm fixed inset-x-0 bottom-16 z-10 mx-auto flex w-fit justify-end bg-transparent p-4">
                 <Button size={'sm'} className="rounded-full px-4 shadow-none">
-                  <PlusCircleIcon className="size-5" />
+                  <AddIcon className="size-5" />
                   تسک جدید
                 </Button>
               </div>
@@ -66,7 +63,7 @@ export default function Page() {
                 size={'sm'}
                 className="pointer-events-auto rounded-full px-4 shadow-none"
               >
-                <PlusCircleIcon className="size-5" /> یادداشت جدید{' '}
+                <AddIcon className="size-5" /> یادداشت جدید{' '}
               </Button>
             </div>
           </NoteDrawer>

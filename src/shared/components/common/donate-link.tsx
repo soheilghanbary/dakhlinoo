@@ -4,7 +4,7 @@ import { Label } from '../ui/label'
 
 export const DonateLink = () => (
   <div className="relative grid gap-3">
-    <Label>🍵 لینک حمایت مالی</Label>
+    <Label className="text-right">🍵 لینک حمایت مالی</Label>
     <Link
       href="https://daramet.com/soly"
       target="_blank"

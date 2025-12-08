@@ -8,7 +8,7 @@ import {
   TransactionSummary,
   TransactionSummarySkeleton,
 } from '@/features/transaction'
-import { UserIcon } from '@/shared/assets/icons/bulk'
+import { UserIcon } from '@/shared/assets/icons/outline'
 import { buttonVariants } from '@/shared/components/ui/button'
 
 export default function Page() {
@@ -23,7 +23,7 @@ export default function Page() {
             href={'/profile'}
             className={buttonVariants({ variant: 'secondary', size: 'icon' })}
           >
-            <UserIcon className="size-5 text-primary" />
+            <UserIcon className="size-5" />
           </Link>
         </div>
         <Suspense fallback={<TransactionSummarySkeleton />}>

@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { LogoutIcon } from '@/shared/assets/icons/bulk'
+import { LogoutIcon } from '@/shared/assets/icons/outline'
 import { signOut } from '@/shared/lib/auth'
 import { Button } from '../ui/button'
 import { Spinner } from '../ui/spinner'
@@ -19,11 +19,11 @@ export function LogoutButton() {
     <Button
       disabled={loading}
       onClick={onSignOut}
-      variant={'secondary'}
-      className="my-4 bg-destructive/10 text-destructive shadow-none"
+      variant={'ghost'}
+      className="w-fit p-0 text-destructive shadow-none hover:bg-card hover:text-destructive"
     >
       {loading ? <Spinner /> : <LogoutIcon className="size-5" />}
-      خروج از حساب کاربری
+      خروج از حساب
     </Button>
   )
 }

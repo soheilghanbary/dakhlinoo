@@ -2,6 +2,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { format } from 'date-fns-jalali'
 import Image from 'next/image'
+import Link from 'next/link'
 import { client } from '@/server/lib/orpc.client'
 import { Skeleton } from '@/shared/components/ui/skeleton'
 
@@ -32,14 +33,16 @@ export function UserInfo() {
 
   return (
     <div className="flex items-center gap-2">
-      <figure className="relative size-9 overflow-hidden rounded-full bg-muted/30">
-        <Image
-          fill
-          alt={user?.name ?? 'User Avatar'}
-          src={user?.image ?? '/avatar.png'}
-          className="object-cover"
-        />
-      </figure>
+      <Link href={'/profile'}>
+        <figure className="relative size-9 overflow-hidden rounded-full bg-muted/30">
+          <Image
+            fill
+            alt={user?.name ?? 'User Avatar'}
+            src={user?.image ?? '/avatar.png'}
+            className="object-cover"
+          />
+        </figure>
+      </Link>
       <div className="grow">
         <UserDate />
         <h2 className="font-medium text-white text-xs sm:text-sm">
