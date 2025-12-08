@@ -23,7 +23,7 @@ export default function About() {
   return (
     <Fragment>
       <AppHeader title="درباره ما" />
-      <section className="fade-up-transition -mx-4 mb-4 bg-card p-4">
+      <section className="fade-up-transition mb-4 rounded-lg bg-card p-4">
         <div className="mx-auto size-fit rounded-full bg-primary/20 p-3 ring-2 ring-primary/50 ring-offset-2 ring-offset-background">
           <Logo className="mx-auto size-12 text-primary" />
         </div>

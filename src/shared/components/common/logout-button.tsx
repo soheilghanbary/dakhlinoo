@@ -17,10 +17,11 @@ export function LogoutButton() {
 
   return (
     <Button
+      size={'xs'}
       disabled={loading}
       onClick={onSignOut}
       variant={'ghost'}
-      className="w-fit p-0 text-destructive shadow-none hover:bg-card hover:text-destructive"
+      className="w-fit bg-danger/10 text-destructive shadow-none hover:text-destructive"
     >
       {loading ? <Spinner /> : <LogoutIcon className="size-5" />}
       خروج از حساب

@@ -106,7 +106,7 @@ export const TransactionCard = ({
         </ul>
         <Separator className="my-4" />
         <div className="grid grid-cols-2 gap-4">
-          <Button variant={'secondary'} asChild>
+          <Button variant={'outline'} asChild>
             <Link href={`/transactions/${id}`}>ویرایش</Link>
           </Button>
           <Button

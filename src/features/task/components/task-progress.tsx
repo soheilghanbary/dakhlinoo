@@ -38,7 +38,7 @@ export const TaskProgress = () => {
   const { progress, isLoading } = useTaskProgress()
   if (isLoading) return <LoadingSkeleton />
   return (
-    <div className="grid max-w-32 grow gap-1">
+    <div className="grid max-w-32 flex-1 gap-1">
       <span className="text-muted-foreground text-xs">
         انجام شده: {progress}%
       </span>

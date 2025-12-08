@@ -9,7 +9,6 @@ import {
 } from '@/assets/icons/outline'
 import { LogoutButton } from '@/shared/components/common/logout-button'
 import { AppHeader } from '@/shared/components/layouts/app-header'
-import { Separator } from '@/shared/components/ui/separator'
 
 const links = [
   {
@@ -44,18 +43,19 @@ export default function ProfilePage() {
     <Fragment>
       <AppHeader title="پروفایل" />
       <main className="space-y-2">
-        <div className="fade-up-transition -mx-4 flex flex-col gap-2 bg-card p-4">
+        <div className="flex flex-col gap-2 rounded-lg bg-card p-3">
           {links.map((l, i) => (
             <Link
               key={i}
               href={l.href}
-              className="flex h-12 items-center gap-3 rounded-lg duration-150"
+              className="flex items-center gap-3 rounded-lg py-3 duration-150"
             >
               <l.icon className="size-5" />
               <span className="grow text-right text-sm/[18px]">{l.title}</span>
             </Link>
           ))}
-          <Separator className="my-1" />
+        </div>
+        <div className="rounded-lg bg-card p-3">
           <LogoutButton />
         </div>
       </main>

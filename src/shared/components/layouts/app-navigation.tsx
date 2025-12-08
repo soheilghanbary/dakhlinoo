@@ -76,7 +76,7 @@ const NavigationItem = ({
 
 export const AppNavigation = () => {
   return (
-    <footer className="container-sm fixed inset-x-0 bottom-0 left-0 z-10 bg-card/85 backdrop-blur-lg">
+    <footer className="container-sm fixed inset-x-0 bottom-0 left-0 z-10 border-t bg-card/85 backdrop-blur-lg">
       <section className="grid w-full grid-cols-5 gap-x-3 px-3 py-2.5">
         {navItems.map((item) => (
           <NavigationItem key={item.href} {...item} />

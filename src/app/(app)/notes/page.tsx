@@ -36,7 +36,7 @@ export default function Page() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="tasks">
-          <div className="mb-4 flex items-center justify-between gap-4">
+          <div className="mb-2 flex items-center justify-between gap-2">
             <TaskProgress />
             <ToggleTaskDone />
             <TaskFilter />

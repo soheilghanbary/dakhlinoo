@@ -7,7 +7,7 @@ type Props = {
 
 export function AppHeader({ title, leftChild }: Props) {
   return (
-    <header className="-m-4 relative mb-2 flex items-center justify-between p-3">
+    <header className="relative mb-4 flex items-center justify-between">
       <BackButton />
       <h1 className="-translate-x-1/2 absolute left-1/2 font-medium text-base">
         {title}

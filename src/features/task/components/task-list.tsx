@@ -37,7 +37,7 @@ const CheckboxTaskButton = ({ id, done }: { id: string; done: boolean }) => {
     <Checkbox
       checked={done}
       onCheckedChange={(e: boolean) => mutate({ id, done: e })}
-      className="size-4.5 rounded-full bg-muted"
+      className="size-4.5 rounded-full bg-card"
     />
   )
 }
@@ -143,7 +143,7 @@ export const TaskList = () => {
     )
 
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 rounded-lg bg-card p-3">
       <AnimatePresence>
         {filtered.map((t) => (
           <motion.div

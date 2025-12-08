@@ -50,7 +50,7 @@ export function UserForm(props: { initialValues: UpdateUserFormSchema }) {
   const onSave = handleSubmit((data) => mutate(data))
 
   return (
-    <form onSubmit={onSave} className="-mx-4 grid gap-4 bg-card p-4">
+    <form onSubmit={onSave} className="grid gap-4 rounded-lg bg-card p-4">
       <TextField
         label="نام و نام خانوادگی"
         error={errors.name?.message}

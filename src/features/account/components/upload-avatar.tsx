@@ -46,7 +46,7 @@ export function UploadAvatar({ initialImage }: Props) {
   const Icon = loading ? Spinner : UploadIcon
 
   return (
-    <div className="-mx-4 flex items-center gap-4 bg-card p-4">
+    <div className="flex items-center gap-4 rounded-lg bg-card p-4">
       <figure className="relative size-18 rounded-full">
         <Image
           fill
