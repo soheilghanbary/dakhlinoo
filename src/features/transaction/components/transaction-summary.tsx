@@ -2,14 +2,14 @@
 import { TrendingDown, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 import { useGetTransactionSummary } from '@/features/transaction'
-import { PlusIcon } from '@/shared/assets/icons/bulk'
+import { AddBoldIcon } from '@/shared/assets/icons/bold'
 import { Button } from '@/shared/components/ui/button'
 import { Skeleton } from '@/shared/components/ui/skeleton'
 
 const NewTransactionButton = () => (
   <Button size={'sm'} className="w-full text-base" asChild>
     <Link href={'/new'}>
-      <PlusIcon className="size-5" />
+      <AddBoldIcon className="size-5" />
       تراکنش جدید
     </Link>
   </Button>

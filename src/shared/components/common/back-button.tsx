@@ -6,7 +6,7 @@ import { Button } from '../ui/button'
 export const BackButton = () => {
   const { back } = useRouter()
   return (
-    <Button onClick={back} variant={'secondary'} size={'icon'}>
+    <Button onClick={back} variant={'ghost'} size={'icon'}>
       <ChevronRight className="size-5" />
     </Button>
   )
