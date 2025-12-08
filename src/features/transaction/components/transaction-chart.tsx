@@ -107,7 +107,7 @@ export function TransactionChart() {
           </TabsTrigger>
         </TabsList>
       </Tabs>
-      <Card className="mt-2 mb-4 shadow-none">
+      <Card className="mt-2 mb-4 border-none shadow-none">
         <CardHeader>
           <CardTitle>گزارش دسته‌بندی‌ها</CardTitle>
         </CardHeader>
