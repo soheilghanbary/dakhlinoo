@@ -143,7 +143,7 @@ export const TaskList = () => {
     )
 
   return (
-    <div className="grid gap-2 rounded-lg bg-card p-3">
+    <div className="grid gap-2">
       <AnimatePresence>
         {filtered.map((t) => (
           <motion.div

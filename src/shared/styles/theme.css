@@ -1,19 +1,19 @@
 :root {
   --radius: 0.675rem;
-  --background: oklch(0.9798 0.0067 277.16);
-  --foreground: oklch(0.485 0.0514 280.13);
+  --background: oklch(0.9846 0.0017 247.84);
+  --foreground: oklch(0.4707 0.0705 265.64);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.485 0.0514 280.13);
+  --card-foreground: oklch(0.4707 0.0705 265.64);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.485 0.0514 280.13);
+  --popover-foreground: oklch(0.4707 0.0705 265.64);
   --primary: oklch(0.6582 0.169 248.81);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(1 0 0);
-  --secondary-foreground: oklch(0.485 0.0514 280.13);
+  --secondary-foreground: oklch(0.4707 0.0705 265.64);
   --muted: oklch(0.9741 0.008 278.64);
-  --muted-foreground: oklch(0.686 0.0326 267.08);
+  --muted-foreground: oklch(0.6659 0.0411 265.69);
   --accent: oklch(0.9741 0.008 278.64);
-  --accent-foreground: oklch(0.485 0.0514 280.13);
+  --accent-foreground: oklch(0.4707 0.0705 265.64);
   --destructive: oklch(0.6424 0.2215 19.4);
   --success: oklch(69.6% 0.17 162.48);
   --warning: oklch(0.7866 0.1617 83.12);
