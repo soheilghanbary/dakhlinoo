@@ -59,7 +59,7 @@ export const NoteList = () => {
 
   if (!data.length)
     return (
-      <div className="flex h-56 flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed bg-muted text-muted-foreground text-sm dark:bg-card">
+      <div className="flex h-56 flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed bg-card text-muted-foreground text-sm dark:bg-card">
         <NotesIcon />
         یادداشت نزاشتی
         <span className="text-xs">رو دکمه + بزن و یادداشت ایجاد کنید</span>

@@ -135,7 +135,7 @@ export const TaskList = () => {
 
   if (!filtered?.length)
     return (
-      <div className="fade-up-transition flex h-56 flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed bg-muted text-muted-foreground text-sm dark:bg-card">
+      <div className="fade-up-transition flex h-56 flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed bg-card text-muted-foreground text-sm dark:bg-card">
         <CheckPaperIcon />
         کاری برای انجام نداری
         <span className="text-xs">رو دکمه + بزن و کاراتو ایجاد کنید</span>
