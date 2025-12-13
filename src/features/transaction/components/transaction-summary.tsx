@@ -56,7 +56,7 @@ export const TransactionSummary = () => {
         <p className="mb-1 text-center text-muted-foreground text-xs">
           موجودی کل
         </p>
-        <p className="text-center font-bold text-2xl text-primary">
+        <p className="text-center font-bold text-2xl text-primary dark:text-foreground">
           {balance.toLocaleString('fa-IR')} تومان
         </p>
       </div>
