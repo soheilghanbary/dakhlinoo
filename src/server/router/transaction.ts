@@ -140,10 +140,9 @@ export const transactionRouter = {
     return updatedTransaction
   }),
   delete: os.input(z.string()).handler(async ({ input }) => {
-    const userId = await getUserId()
     const [deletedTransaction] = await db
       .delete(transactions)
-      .where(and(eq(transactions.id, input), eq(transactions.userId, userId)))
+      .where(and(eq(transactions.id, input)))
       .returning()
     return deletedTransaction
   }),
