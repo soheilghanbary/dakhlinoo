@@ -21,6 +21,7 @@ import { DateField } from './date-field'
 type Props = {
   mode: 'add' | 'edit'
   transaction?: CreateTransaction & { id?: string }
+  userId: string
 }
 
 export const TransactionForm = (props: Props) => {
@@ -39,6 +40,7 @@ export const TransactionForm = (props: Props) => {
       date: new Date(),
       categoryId: '',
       description: '',
+      userId: props.userId,
     },
   })
   const { mutate: addMutate, isPending: addLoading } = useMutation(

@@ -19,7 +19,7 @@ export const transactionRouter = {
     })
   }),
   create: os.input(createTransaction).handler(async ({ input }) => {
-    const userId = await getUserId()
+    const userId = input.userId
     const [newTransaction] = await db
       .insert(transactions)
       .values({
@@ -127,7 +127,7 @@ export const transactionRouter = {
     return { balance, income, expense }
   }),
   update: os.input(editTransaction).handler(async ({ input }) => {
-    const userId = await getUserId()
+    const userId = input.userId
     const [updatedTransaction] = await db
       .update(transactions)
       .set({

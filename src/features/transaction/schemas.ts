@@ -6,6 +6,7 @@ export const createTransaction = z.object({
   date: z.date(),
   categoryId: z.string().min(1, 'موضوع رو انتخاب کن'),
   description: z.string().nullable(),
+  userId: z.string().min(8),
 })
 
 export const editTransaction = createTransaction.extend({
