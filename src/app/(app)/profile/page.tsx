@@ -5,7 +5,6 @@ import {
   InfoIcon,
   MagicIcon,
   MoneyIcon,
-  SettingsIcon,
   UserIcon,
 } from '@/assets/icons/outline'
 import { LogoutButton } from '@/shared/components/common/logout-button'
@@ -27,11 +26,11 @@ const links = [
     title: 'تغییر پوسته اپلیکیشن',
     icon: MagicIcon,
   },
-  {
-    href: '/settings',
-    title: 'تنظیمات',
-    icon: SettingsIcon,
-  },
+  // {
+  //   href: '/settings',
+  //   title: 'تنظیمات',
+  //   icon: SettingsIcon,
+  // },
   {
     href: '/support',
     title: 'پشتیبان آنلاین',
