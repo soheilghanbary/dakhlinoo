@@ -14,8 +14,8 @@ type CreateCategorySchema = z.infer<typeof createCategorySchema>
 type UpdateCategorySchema = z.infer<typeof updateCategorySchema>
 
 export {
-  createCategorySchema,
-  updateCategorySchema,
   type CreateCategorySchema,
+  createCategorySchema,
   type UpdateCategorySchema,
+  updateCategorySchema,
 }

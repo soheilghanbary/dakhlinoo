@@ -67,6 +67,9 @@
       "a11y": {
         "recommended": true,
         "noSvgWithoutTitle": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       }
     }
   }

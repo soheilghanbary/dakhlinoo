@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { StarsPattern } from '@/shared/assets/icons/stars'
 import { Label } from '../ui/label'
@@ -23,8 +24,7 @@ export const DonateLink = () => (
 
 export const CoffeeLink = () => (
   <a href="https://www.coffeebede.com/soheildev">
-    {/** biome-ignore lint/performance/noImgElement: <explanation> */}
-    <img
+    <Image
       alt="coffeebede"
       loading="lazy"
       draggable="false"

@@ -59,8 +59,7 @@ export const transactionRouter = {
         : eq(transactions.userId, userId)
 
       // --- ORDER BY clause ---
-      // biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
-      let orderByClause
+      let orderByClause = desc(transactions.date)
       switch (sort) {
         case 'highest':
           orderByClause = desc(transactions.amount)
